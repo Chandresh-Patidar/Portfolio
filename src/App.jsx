@@ -13,7 +13,7 @@ import { AboutPage, ContactPage, WorkExperiencePage } from "./pages";
 const App = () => {
   return (
     <Router>
-      <div className="relative z-0 bg-primary min-h-screen">
+      <div className="relative z-0 bg-primary min-h-[94vh]">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
         </div>
@@ -25,8 +25,8 @@ const App = () => {
           <Route path="/resume" element={<ResumeNew />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 };

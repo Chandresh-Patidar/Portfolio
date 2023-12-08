@@ -27,7 +27,7 @@ function ResumeNew() {
   };
 
   return (
-    <div className="container mx-auto flex justify-center m-4">
+    <div className="container mx-auto flex justify-center m-4 mb-0">
       <div className="max-w-2xl relative pt-28 pb-8 bg-section-background-color text-white flex flex-col items-center">
         <div style={{ justifyContent: "center", position: "relative" }}>
           <a
