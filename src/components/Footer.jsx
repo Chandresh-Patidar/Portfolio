@@ -16,8 +16,8 @@ const socialMediaLinks = [
 // Footer
 const Footer = () => {
   return (
-    <footer className=" w-full text-center z-20 bg-primary">
-      <div className="flex justify-center items-center gap-5 p-5">
+    <footer className=" w-full text-center z-20 bg-primary ">
+      <div className="flex justify-center items-center gap-5 m-5 mb-0">
         {socialMediaLinks.map((link, index) => (
           <a key={index} href={link.url} target="_blank" rel="noreferrer">
             <img
