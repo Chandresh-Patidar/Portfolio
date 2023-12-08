@@ -78,11 +78,7 @@ const Navbar = () => {
                   }}
                 >
                   {link?.link ? (
-                    <a
-                      href={link.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
+                    <a href={link.link} rel="noreferrer noopener">
                       {link.title}
                     </a>
                   ) : (

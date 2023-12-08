@@ -9,7 +9,7 @@ const socialMediaLinks = [
   {
     title: "GitHub",
     icon: github,
-    url: "http://github.com",
+    url: "https://github.com/Chandresh-Patidar",
   },
 ];
 

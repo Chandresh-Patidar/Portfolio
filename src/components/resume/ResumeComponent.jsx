@@ -6,7 +6,7 @@ import pdf from "../../assets/chandresh-resume.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
-  "https://raw.githubusercontent.com/Madhavkabra/Portfolio/master/src/Assets/Resume%20Madhav%202023%20Dated.pdf";
+  "https://raw.githubusercontent.com/Chandresh-Patidar/Portfolio/portfolio/v1/src/assets/chandresh-resume.pdf";
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -48,7 +48,6 @@ function ResumeNew() {
             className="d-flex flex-column align-items-center justify-content-center "
           >
             <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} wrap />
-            <Page pageNumber={2} scale={width > 786 ? 1.7 : 0.6} wrap />
           </Document>
         </div>
       </div>

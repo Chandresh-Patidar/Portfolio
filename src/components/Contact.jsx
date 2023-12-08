@@ -125,7 +125,7 @@ const Contact = () => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] bg-black-100 p-8 rounded-2xl mb-24"
       >
         {/* Title */}
         <p className={styles.sectionSubText}>Get in touch</p>
@@ -135,7 +135,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-12 flex flex-col gap-8 "
         >
           {/* Name */}
           <label htmlFor="name" className="flex flex-col">

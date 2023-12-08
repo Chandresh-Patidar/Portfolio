@@ -3,7 +3,6 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github, preview } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -25,7 +24,7 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full overflow-scroll h-[500px]"
+      className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[526px]"
     >
       <div className="relative w-full h-[230px] ">
         {/* Work image */}
@@ -34,58 +33,30 @@ const ProjectCard = ({
           alt={name}
           className="w-full h-full object-cover rounded-2xl"
         />
+      </div>
 
-        {/* Live Site */}
-        <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          <div
-            onClick={() => window.open(live_site_link, "_blank", "noreferrer")}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={preview}
-              alt="Live Site"
-              title="Live Site"
-              className="w-2/3 h-2/3 object-contain"
-            />
-          </div>
-
-          {/* Github */}
-          <div
-            onClick={() =>
-              window.open(source_code_link, "_blank", "noreferrer")
-            }
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer ml-2"
-          >
-            <img
-              src={github}
-              alt="Github"
-              title="Github"
-              className="w-1/2 h-1/2 object-contain"
-            />
-          </div>
+      <div className="flex flex-col justify-between h-[254px] h-full">
+        {/* Work Info */}
+        <div className="mt-5">
+          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          {description.map((point, i) => (
+            <p
+              key={`work-point-${i}`}
+              className="text-white-100 text-[14px] pl-1 py-1 tracking-wider"
+            >
+              {point}
+            </p>
+          ))}
         </div>
-      </div>
 
-      {/* Work Info */}
-      <div className="mt-5 ">
-        <h3 className="text-white font-bold text-[24px]">{name}</h3>
-        {description.map((point, i) => (
-          <p
-            key={`work-point-${i}`}
-            className="text-white-100 text-[14px] pl-1 py-1 tracking-wider"
-          >
-            {point}
-          </p>
-        ))}
-      </div>
-
-      {/* Work Tag */}
-      <div className="mt-4 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <p key={index + tag.name} className={`text-[14px] ${tag.color}`}>
-            #{tag.name}
-          </p>
-        ))}
+        {/* Work Tag */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <p key={index + tag.name} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </p>
+          ))}
+        </div>
       </div>
     </Tilt>
   </motion.div>
@@ -116,7 +87,7 @@ const Works = () => {
       </div>
 
       {/* Project Card */}
-      <div className="mt-20 flex flex-wrap justify-center gap-7">
+      <div className="my-20 flex flex-wrap justify-center gap-7">
         {projects.map((project, i) => (
           <React.Fragment key={`project-${i}`}>
             <ProjectCard index={i} {...project} />

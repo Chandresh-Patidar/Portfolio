@@ -28,19 +28,19 @@ export const navLinks = [
     link: "/about",
   },
   {
-    id: "work",
-    title: "Work",
-    link: "/work",
-  },
-  {
-    id: "resume",
-    title: "Resume",
-    link: "/resume",
+    id: "projects",
+    title: "Project",
+    link: "/project",
   },
   {
     id: "contact",
     title: "Contact",
     link: "/contact",
+  },
+  {
+    id: "resume",
+    title: "Resume",
+    link: "/resume",
   },
 ];
 
@@ -155,12 +155,7 @@ const projects = [
   {
     name: "Renovate Craft",
     description: [
-      "- Designed an intuitive interface for easy renovation planning, including wireframes and mockups.",
-      "- Developed a comprehensive project dashboard for tracking progress, budget, and timelines.",
-      "- Implemented tools for customizable room layouts, furniture arrangement, and material selection.",
-      "- Created a budgeting module with real-time calculations to ensure financial control.",
-      "- Enhanced the user experience with Data visualization for previewing renovation ideas.",
-      "- Ensured responsive design and integrated collaboration features for seamless user interaction.",
+      "created an intuitive renovation planning interface with a comprehensive dashboard, customizable layout tools, real-time budgeting module, data visualization, and responsive design with integrated collaboration features",
     ],
     tags: [
       {
@@ -183,13 +178,8 @@ const projects = [
   {
     name: "Shoutt App",
     description: [
-      "- Crafted visually appealing, responsive user interfaces with React",
-      "- Developed modular, well-tested React components",
-      "- Integrated real-time telemetry, UAV data feeds into UI",
-      "- Created interactive maps, charts for UAV monitoring",
-      "- Optimized React app for smooth user experience",
-      "- JavaScript, ES6+, HTML, CSS, Redux expertise",
-      "- Active in code reviews, excellent teamwork",
+      "Built a responsive renovation planning application with a comprehensive dashboard, customizable layout tools," +
+        " real-time budgeting, data visualization, and integrated collaboration features",
     ],
     tags: [
       {
@@ -212,12 +202,8 @@ const projects = [
   {
     name: "Smart Home Nexus",
     description: [
-      "- Designed a visually appealing, responsive interface for a Smart Home Control Panel",
-      "- Integrated and displayed data from diverse smart home devices with interactive controls",
-      "- Enabled real-time updates for instant feedback on device status.",
-      "- Implemented secure user authentication and managed permissions.",
-      "- Ensured cross-device accessibility and allowed user dashboard customization.",
-      "- Incorporated features for energy monitoring, alerts, voice assistant integration, and documentation.",
+      "Designed a responsive Smart Home Control Panel, integrated diverse device data, enabled real-time updates," +
+        " implemented secure authentication, ensured cross-device accessibility, and incorporated energy monitoring and voice assistant features.",
     ],
     tags: [
       {
