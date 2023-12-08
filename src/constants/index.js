@@ -187,7 +187,7 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "rapidapi",
+        name: "redux",
         color: "green-text-gradient",
       },
       {
@@ -211,11 +211,11 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "rapidapi",
+        name: "graphql",
         color: "green-text-gradient",
       },
       {
-        name: "tailwindcss",
+        name: "typescript",
         color: "pink-text-gradient",
       },
     ],
