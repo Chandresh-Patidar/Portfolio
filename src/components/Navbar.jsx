@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { clogo, close, menu } from "../assets";
 import { navLinks } from "../constants";
 import { styles } from "../styles";
@@ -10,6 +9,21 @@ const Navbar = () => {
   // state variables
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const node = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (node.current.contains(e.target)) {
+        return;
+      }
+      setToggle(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav
@@ -27,12 +41,12 @@ const Navbar = () => {
         >
           <img src={clogo} alt="Logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Chandresh&nbsp;<span className="sm:block hidden">| Developer</span>
+            Chandresh&nbsp;<span className="hidden lg:block">| Developer</span>
           </p>
         </Link>
 
         {/* Nav Links (Desktop) */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -42,16 +56,16 @@ const Navbar = () => {
               onClick={() => !link?.link && setActive(link.title)}
             >
               {link?.link ? (
-                <a href={link.link}>{link.title}</a>
+                <Link to={link.link}>{link.title}</Link>
               ) : (
-                <a href={`${link.id}`}>{link.title}</a>
+                <Link to={`${link.id}`}>{link.title}</Link>
               )}
             </li>
           ))}
         </ul>
 
         {/* Hamburger Menu (Mobile) */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="Menu"
@@ -60,6 +74,7 @@ const Navbar = () => {
           />
 
           <div
+            ref={node}
             className={`${
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
@@ -75,14 +90,15 @@ const Navbar = () => {
                   onClick={() => {
                     !link?.link && setToggle(!toggle);
                     !link?.link && setActive(link.title);
+                    setToggle(false);
                   }}
                 >
                   {link?.link ? (
-                    <a href={link.link} rel="noreferrer noopener">
+                    <Link to={link.link} rel="noreferrer noopener">
                       {link.title}
-                    </a>
+                    </Link>
                   ) : (
-                    <a href={`#${link.id}`}>{link.title}</a>
+                    <Link to={`#${link.id}`}>{link.title}</Link>
                   )}
                 </li>
               ))}

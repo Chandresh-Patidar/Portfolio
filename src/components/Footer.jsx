@@ -1,4 +1,5 @@
 import { github, linkedin } from "../assets/index.js";
+import { Link } from "react-router-dom";
 
 const socialMediaLinks = [
   {
@@ -16,17 +17,17 @@ const socialMediaLinks = [
 // Footer
 const Footer = () => {
   return (
-    <footer className=" w-full text-center z-20 bg-primary ">
-      <div className="flex justify-center items-center gap-5 m-5 mb-0">
+    <footer className="w-full text-center z-20 bg-primary">
+      <div className="flex justify-center items-center gap-5 mb-0 p-5">
         {socialMediaLinks.map((link, index) => (
-          <a key={index} href={link.url} target="_blank" rel="noreferrer">
+          <Link key={index} to={link.url} target="_blank" rel="noreferrer">
             <img
               src={link.icon}
               alt={link.title}
               title={link.title}
               className="w-10 h-10 object-contain"
             />
-          </a>
+          </Link>
         ))}
       </div>
     </footer>
