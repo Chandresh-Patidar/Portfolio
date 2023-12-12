@@ -10,7 +10,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     // Mesh
-    <mesh>
+    <mesh className="border-2 border-red-900">
       <hemisphereLight intensity={0.15} groundColor="black" />
       <pointLight intensity={1} />
       <spotLight
@@ -23,8 +23,8 @@ const Computers = ({ isMobile }) => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.3 : 1.1}
+        position={isMobile ? [0, 1, -0.6] : [0, -1.95, -1.7]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -60,6 +60,9 @@ const ComputersCanvas = () => {
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
+      height={"50%"}
+      width={"100%"}
+      // className="border-2 border-green-700"
     >
       {/* Canvas Loader show on fallback */}
       <Suspense fallback={<CanvasLoader />}>

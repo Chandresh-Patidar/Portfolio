@@ -14,7 +14,7 @@ const Tech = () => {
         <p className={styles.sectionSubText}>My tech stack</p>
         <h2 className={styles.sectionHeadText}>Skills.</h2>
       </motion.div>
-      <div className="flex flex-row flex-wrap justify-center gap-6">
+      <div className="flex flex-row flex-wrap justify-center gap-6 mt-10">
         {/* Title */}
 
         {/* Iterate over each technology */}

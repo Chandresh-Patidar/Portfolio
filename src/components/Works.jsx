@@ -29,8 +29,10 @@ const ProjectCard = ({ index, name, description, tags, image }) => (
 
       <div className="flex flex-col justify-between !h-[254px]">
         {/* Work Info */}
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+        <div className="mt-5 ">
+          <h3 className="text-white font-bold text-[24px] overflow-hidden whitespace-nowrap text-overflow-ellipsis">
+            {name}
+          </h3>
           {description.map((point, i) => (
             <p
               key={`work-point-${i}`}
@@ -68,7 +70,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px]  leading-[30px] text-justify mt-10"
+          className="empty-4 text-secondary text-[17px]  leading-[30px] text-justify mt-7 lg:mt-10"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -79,7 +81,7 @@ const Works = () => {
       </div>
 
       {/* Project Card */}
-      <div className="my-20 flex flex-col sm:flex-row justify-center  gap-7">
+      <div className="my-20 flex flex-col xl:flex-row xl:justify-center items-center gap-7">
         {projects.map((project, i) => (
           <React.Fragment key={`project-${i}`}>
             <ProjectCard index={i} {...project} />

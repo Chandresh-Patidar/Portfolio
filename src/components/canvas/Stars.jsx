@@ -1,6 +1,6 @@
-import React, { useRef, Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload, Point } from "@react-three/drei";
+import { PointMaterial, Points, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
 // Stars
@@ -35,7 +35,7 @@ const Stars = (props) => {
 // Stars Canvas
 const StarsCanvas = () => {
   return (
-    <div className="w-full h-auto absolute inset-0 z-[-1]">
+    <div className="w-full h-screen absolute inset-0 z-[-1]">
       {/* Canvas */}
       <Canvas camera={{ position: [0, 0, 1] }}>
         {/* Show stars if not fallback */}

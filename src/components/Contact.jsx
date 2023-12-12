@@ -122,10 +122,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden ">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl mb-24"
+        className="flex-1 bg-black-100 p-3 py-6 xl:p-8 rounded-2xl mb-24"
       >
         {/* Title */}
         <p className={styles.sectionSubText}>Get in touch</p>
@@ -135,7 +135,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8 "
+          className="mt-12 flex flex-col gap-8"
         >
           {/* Name */}
           <label htmlFor="name" className="flex flex-col">
@@ -214,7 +214,7 @@ const Contact = () => {
       {/* Earth Model */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-[0.75] flex items-center xl:h-auto md:h-[550px] h-[300px]"
       >
         <EarthCanvas />
       </motion.div>

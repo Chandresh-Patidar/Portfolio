@@ -10,10 +10,10 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => (
   <div
     className={
-      "text-white green-pink-gradient p-[1px] rounded-[20px] shadow-card mt-10"
+      "text-white green-pink-gradient p-[1px] rounded-[20px] shadow-card "
     }
   >
-    <div className="bg-tertiary rounded-[20px] py-5 px-12 ">
+    <div className="bg-tertiary rounded-[20px] py-5 px-3 sm:px-12 ">
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
 
@@ -55,7 +55,7 @@ const Experience = () => {
       </motion.div>
 
       {/* Experience Card */}
-      <div className="empty-20 flex flex-col">
+      <div className="empty-20 flex flex-col mt-10">
         {/*<VerticalTimeline>*/}
         {experiences.map((experience, i) => (
           <ExperienceCard key={i} experience={experience} />

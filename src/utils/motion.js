@@ -1,16 +1,17 @@
 // Text Variant motion
 export const textVariant = (delay) => {
+  const isSmallScreen = window.innerHeight < 625;
   return {
     hidden: {
       y: -50,
-      opacity: 0,
+      opacity: isSmallScreen ? 1 : 0,
     },
     show: {
       y: 0,
       opacity: 1,
       transition: {
         type: "spring",
-        duration: 1.25,
+        duration: isSmallScreen ? 0.625 : 1.25,
         delay: delay,
       },
     },
@@ -19,11 +20,12 @@ export const textVariant = (delay) => {
 
 // FadeIn motion
 export const fadeIn = (direction, type, delay, duration) => {
+  const isSmallScreen = window.innerHeight < 625;
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
       y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-      opacity: 0,
+      opacity: isSmallScreen ? 1 : 0,
     },
     show: {
       x: 0,
@@ -32,7 +34,7 @@ export const fadeIn = (direction, type, delay, duration) => {
       transition: {
         type: type,
         delay: delay,
-        duration: duration,
+        duration: isSmallScreen ? duration / 2 : duration,
         ease: "easeOut",
       },
     },
