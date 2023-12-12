@@ -23,6 +23,11 @@ import {
 // Navbar Links
 export const navLinks = [
   {
+    id: "home",
+    title: "Home",
+    link: "/",
+  },
+  {
     id: "about",
     title: "About",
     link: "/about",
@@ -155,7 +160,7 @@ const projects = [
   {
     name: "Renovate Craft",
     description: [
-      "created an intuitive renovation planning interface with a comprehensive dashboard, customizable layout tools, real-time budgeting module, data visualization, and responsive design with integrated collaboration features",
+      "Created a renovation planning interface featuring a dashboard, layout tools, real-time budgeting, data visualization, responsive design, and collaboration features.",
     ],
     tags: [
       {
@@ -178,8 +183,7 @@ const projects = [
   {
     name: "Shoutt App",
     description: [
-      "Built a responsive renovation planning application with a comprehensive dashboard, customizable layout tools," +
-        " real-time budgeting, data visualization, and integrated collaboration features",
+      "Built a responsive renovation planning application featuring a comprehensive dashboard, customizable layout tools, real-time budgeting, data visualization, and collaboration features.",
     ],
     tags: [
       {
@@ -187,11 +191,11 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "redux",
+        name: "context-api",
         color: "green-text-gradient",
       },
       {
-        name: "tailwindcss",
+        name: "material-ui",
         color: "pink-text-gradient",
       },
     ],
@@ -202,12 +206,11 @@ const projects = [
   {
     name: "Smart Home Nexus",
     description: [
-      "Designed a responsive Smart Home Control Panel, integrated diverse device data, enabled real-time updates," +
-        " implemented secure authentication, ensured cross-device accessibility, and incorporated energy monitoring and voice assistant features.",
+      "Designed a responsive Smart Home Control Panel with diverse data integration, real-time updates, secure authentication, cross-device accessibility, and advanced features.",
     ],
     tags: [
       {
-        name: "react",
+        name: "nextjs",
         color: "blue-text-gradient",
       },
       {
