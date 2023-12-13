@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 // Computers
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, isTablet }) => {
   // Import scene
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
@@ -23,8 +23,14 @@ const Computers = ({ isMobile }) => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.3 : 1.1}
-        position={isMobile ? [0, 1, -0.6] : [0, -1.95, -1.7]}
+        scale={isMobile ? 0.6 : isTablet ? 0.8 : 1.1}
+        position={
+          isMobile
+            ? [-1, -0.7, -1.4]
+            : isTablet
+            ? [-2, -0.3, -1.8]
+            : [0, -1.95, -1.7]
+        }
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -36,15 +42,36 @@ const ComputersCanvas = () => {
   // state to check mobile
   const [isMobile, setIsMobile] = useState(false);
 
+  // state to check if device is a tablet
+  const [isTablet, setIsTablet] = useState(false);
+
   // Check if device is Mobile
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
     setIsMobile(mediaQuery.matches);
 
     // handle screen size change
     const handleMediaQueryChange = (event) => {
       setIsMobile(event?.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
+  // Check if device is a tablet
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(min-width: 768px) and (max-width: 1024px) and (min-height: 1024px) and (max-height: 1368px)"
+    );
+    setIsTablet(mediaQuery.matches);
+
+    // handle screen size change
+    const handleMediaQueryChange = (event) => {
+      setIsTablet(event?.matches);
     };
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
@@ -73,7 +100,7 @@ const ComputersCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         {/* Show Model */}
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
 
       {/* Preload all */}
